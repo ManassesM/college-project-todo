@@ -1,0 +1,24 @@
+<div class="app">
+  
+  <div class="card">
+    <p class="title">Lista de Afazeres</p>
+  </div>
+
+
+  <div class="container">
+  
+    <button (click)="getTodos()">Mostrar tarefas<div class="plus">+</div></button>
+    
+    <div *ngFor="let todo of todos | async">
+      <div class="list">
+        <div class="close" (click)="deleteTodo()">x</div> 
+        
+        {{ todo.text }}
+      </div>
+    
+    </div>
+
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
